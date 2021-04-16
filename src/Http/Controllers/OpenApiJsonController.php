@@ -1,6 +1,6 @@
 <?php
 
-namespace NextApps\SwaggerUi\Http\Controllers;
+namespace Jobins\SwaggerUi\Http\Controllers;
 
 class OpenApiJsonController
 {
@@ -40,6 +40,10 @@ class OpenApiJsonController
      */
     protected function configureServer(array $json)
     {
+        if ( isset($json["servers"]) ) {
+            return $json;
+        }
+
         $json['servers'] = [
             ['url' => config('app.url')],
         ];
@@ -56,25 +60,25 @@ class OpenApiJsonController
      */
     protected function configureOAuth(array $json)
     {
-        if (empty($json['components']['securitySchemes'])) {
+        if ( empty($json['components']['securitySchemes']) ) {
             return $json;
         }
 
         $json['components']['securitySchemes'] = collect($json['components']['securitySchemes'])->map(function ($scheme) {
-            if ($scheme['type'] !== 'oauth2') {
+            if ( $scheme['type'] !== 'oauth2' ) {
                 return $scheme;
             }
 
             $scheme['flows'] = collect($scheme['flows'])->map(function ($flow) {
-                if (isset($flow['tokenUrl'])) {
+                if ( isset($flow['tokenUrl']) ) {
                     $flow['tokenUrl'] = url(config('swagger-ui.oauth.token_path'));
                 }
 
-                if (isset($flow['refreshUrl'])) {
+                if ( isset($flow['refreshUrl']) ) {
                     $flow['refreshUrl'] = url(config('swagger-ui.oauth.refresh_path'));
                 }
 
-                if (isset($flow['authorizationUrl'])) {
+                if ( isset($flow['authorizationUrl']) ) {
                     $flow['authorizationUrl'] = url(config('swagger-ui.oauth.authorization_path'));
                 }
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace NextApps\SwaggerUi;
+namespace Jobins\SwaggerUi;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use NextApps\SwaggerUi\Console\InstallCommand;
-use NextApps\SwaggerUi\Http\Controllers\OpenApiJsonController;
-use NextApps\SwaggerUi\Http\Middleware\EnsureUserIsAuthorized;
+use Jobins\SwaggerUi\Console\InstallCommand;
+use Jobins\SwaggerUi\Http\Controllers\OpenApiJsonController;
+use Jobins\SwaggerUi\Http\Middleware\EnsureUserIsAuthorized;
 
 class SwaggerUiServiceProvider extends ServiceProvider
 {

@@ -1,14 +1,15 @@
 {
-    "name": "nextapps/laravel-swagger-ui",
+    "name": "jobins/laravel-swagger-ui",
     "description": "Add Swagger UI to a Laravel application.",
     "keywords": [
+        "jobins",
         "nextapps",
         "laravel",
         "swagger",
         "swagger-ui",
         "openapi"
     ],
-    "homepage": "https://github.com/nextapps/laravel-swagger-ui",
+    "homepage": "https://github.com/JoBinsJP/laravel-swagger-ui",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -29,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "NextApps\\SwaggerUi\\": "src"
+            "Jobins\\SwaggerUi\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "NextApps\\SwaggerUi\\Tests\\": "tests"
+            "Jobins\\SwaggerUi\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -49,7 +50,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "NextApps\\SwaggerUi\\SwaggerUiServiceProvider"
+                "Jobins\\SwaggerUi\\SwaggerUiServiceProvider"
             ]
         }
     }

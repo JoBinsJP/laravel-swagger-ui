@@ -1,10 +1,10 @@
 <?php
 
-namespace NextApps\SwaggerUi\Test;
+namespace Jobins\SwaggerUi\Tests;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Gate;
-use NextApps\SwaggerUi\SwaggerUiServiceProvider;
+use Jobins\SwaggerUi\SwaggerUiServiceProvider;
 use Orchestra\Testbench\TestCase;
 
 class OpenApiRouteTest extends TestCase
@@ -33,17 +33,6 @@ class OpenApiRouteTest extends TestCase
     protected function getPackageProviders($app)
     {
         return [SwaggerUiServiceProvider::class];
-    }
-
-    /** @test */
-    public function it_sets_server_to_current_app_url()
-    {
-        config()->set('app.url', 'http://foo.bar');
-
-        $this->get('swagger/openapi.json')
-            ->assertStatus(200)
-            ->assertJsonCount(1, 'servers')
-            ->assertJsonPath('servers.0.url', 'http://foo.bar');
     }
 
     /** @test */

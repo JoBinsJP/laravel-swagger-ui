@@ -1,10 +1,10 @@
 <?php
 
-namespace NextApps\SwaggerUi\Test;
+namespace Jobins\SwaggerUi\Tests;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Gate;
-use NextApps\SwaggerUi\SwaggerUiServiceProvider;
+use Jobins\SwaggerUi\SwaggerUiServiceProvider;
 use Orchestra\Testbench\TestCase;
 
 class AuthorizationTest extends TestCase
